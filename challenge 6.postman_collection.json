@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "49d684bc-0a9b-499a-a401-2ac0f9a344b4",
+		"name": "challenge 6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29315390"
+	},
+	"item": [
+		{
+			"name": "get all mobil Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/cars",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"OK\",\r\n    \"message\": \"Sukses Menampilkan Data Mobil\",\r\n    \"data\": {\r\n        \"cars\": [\r\n            {\r\n                \"id\": \"1\",\r\n                \"car_name\": \"test\",\r\n                \"car_categories\": \"muat\",\r\n                \"car_size\": \"truck\",\r\n                \"status_rental\": \"ready\",\r\n                \"car_img\": \"https://res.cloudinary.com/drfsdq9de/image/upload/v1700838672/t9gvfh4hytcxrnj4pkvi.jpg\",\r\n                \"created_by\": {\r\n                    \"id\": \"7\",\r\n                    \"username\": \"rizky\",\r\n                    \"email\": \"rizky@gmail.com\"\r\n                },\r\n                \"updated_by\": {\r\n                    \"username\": \"rizky\"\r\n                },\r\n                \"deleted_by\": {\r\n                    \"username\": \"rizky\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": \"2\",\r\n                \"car_name\": \"testupdate2\",\r\n                \"car_categories\": \"testupdate2\",\r\n                \"car_size\": \"testupdate2\",\r\n                \"status_rental\": \"ready\",\r\n                \"car_img\": \"image-1700895955092.jpg\",\r\n                \"created_by\": {\r\n                    \"id\": \"7\",\r\n                    \"username\": \"rizky\",\r\n                    \"email\": \"rizky@gmail.com\"\r\n                },\r\n                \"updated_by\": {\r\n                    \"id\": \"7\",\r\n                    \"username\": \"rizky\",\r\n                    \"email\": \"rizky@gmail.com\"\r\n                },\r\n                \"deleted_by\": {\r\n                    \"username\": \"rizky\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "post car Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "car_name",
+							"value": "taxi",
+							"type": "text"
+						},
+						{
+							"key": "car_categories",
+							"value": "penumpang",
+							"type": "text"
+						},
+						{
+							"key": "car_size",
+							"value": "sedan",
+							"type": "text"
+						},
+						{
+							"key": "car_img",
+							"type": "file",
+							"src": "/C:/Users/brill/OneDrive/Gambar/insta taxi passenger/d54586cdb482d0f973d6b8dad9a7d25a.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/cars",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "succes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car_name",
+									"value": "taxi",
+									"type": "text"
+								},
+								{
+									"key": "car_categories",
+									"value": "penumpang",
+									"type": "text"
+								},
+								{
+									"key": "car_size",
+									"value": "sedan",
+									"type": "text"
+								},
+								{
+									"key": "car_img",
+									"type": "file",
+									"src": "/C:/Users/brill/OneDrive/Gambar/insta taxi passenger/d54586cdb482d0f973d6b8dad9a7d25a.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/cars",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"cars"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"CREATED\",\r\n    \"message\": \"Data Mobil Berhasil Ditambahkan\",\r\n    \"data\": {\r\n        \"created_car\": {\r\n            \"car_name\": \"test\",\r\n            \"car_categories\": \"muat\",\r\n            \"car_size\": \"truck\",\r\n            \"status_rental\": \"ready\",\r\n            \"car_img\": \"https://res.cloudinary.com/drfsdq9de/image/upload/v1700895706/f32trbgjkvs1ojzrmnbe.jpg\",\r\n            \"create_by\": \"7\",\r\n            \"id\": \"2\"\r\n        }\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "get by id mobil Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/cars/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/cars/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"OK\",\r\n    \"message\": \"Sukses Menampilkan Data Mobil\",\r\n    \"data\": {\r\n        \"cars\": [\r\n            {\r\n                \"id\": \"1\",\r\n                \"car_name\": \"test\",\r\n                \"car_categories\": \"muat\",\r\n                \"car_size\": \"truck\",\r\n                \"status_rental\": \"ready\",\r\n                \"car_img\": \"https://res.cloudinary.com/drfsdq9de/image/upload/v1700838672/t9gvfh4hytcxrnj4pkvi.jpg\",\r\n                \"created_by\": {\r\n                    \"id\": \"7\",\r\n                    \"username\": \"rizky\",\r\n                    \"email\": \"rizky@gmail.com\"\r\n                },\r\n                \"updated_by\": {\r\n                    \"username\": \"rizky\"\r\n                },\r\n                \"deleted_by\": {\r\n                    \"username\": \"rizky\"\r\n                }\r\n            },\r\n        ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "update mobil Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "car_name",
+							"value": "edit taxi",
+							"type": "text"
+						},
+						{
+							"key": "car_categories",
+							"value": "muehehheh",
+							"type": "text"
+						},
+						{
+							"key": "car_size",
+							"value": "tidak tau",
+							"type": "text"
+						},
+						{
+							"key": "car_img",
+							"type": "file",
+							"src": "/C:/Users/brill/OneDrive/Gambar/insta taxi passenger/taxi passenger (1).jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/cars/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car_name",
+									"value": "edit taxi",
+									"type": "text"
+								},
+								{
+									"key": "car_categories",
+									"value": "muehehheh",
+									"type": "text"
+								},
+								{
+									"key": "car_size",
+									"value": "tidak tau",
+									"type": "text"
+								},
+								{
+									"key": "car_img",
+									"type": "file",
+									"src": "/C:/Users/brill/OneDrive/Gambar/insta taxi passenger/taxi passenger (1).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/cars/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"UPDATED\",\r\n    \"message\": \"Data Mobil Berhasil Diupdate\",\r\n    \"data\": {\r\n        \"old_car\": {\r\n            \"id\": \"2\",\r\n            \"car_name\": \"testupdate\",\r\n            \"car_categories\": \"testupdate\",\r\n            \"car_size\": \"testupdate\",\r\n            \"status_rental\": \"not\",\r\n            \"car_img\": \"image-1700895756432.jpg\",\r\n            \"create_by\": \"7\",\r\n        },\r\n        \"updated_car\": {\r\n            \"car_name\": \"testupdate2\",\r\n            \"car_categories\": \"testupdate2\",\r\n            \"car_size\": \"testupdate2\",\r\n            \"status_rental\": \"ready\",\r\n            \"car_img\": \"image-1700895955092.jpg\",\r\n            \"update_by\": \"7\"\r\n        }\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/cars/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"cars",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/cars/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"DELETED\",\r\n    \"message\": \"Data Mobil Berhasil Dihapus\",\r\n    \"data\": {\r\n        \"deleted_car\": {\r\n            \"id\": \"2\",\r\n            \"car_name\": \"testupdate2\",\r\n            \"car_categories\": \"testupdate2\",\r\n            \"car_size\": \"testupdate2\",\r\n            \"status_rental\": \"ready\",\r\n            \"car_img\": \"image-1700895955092.jpg\",\r\n            \"create_by\": \"7\",\r\n            \"update_by\": \"7\",\r\n        }\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/auth/register",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"CREATED\",\r\n    \"message\": \"User Berhasil Ditambahkan\",\r\n    \"data\": {\r\n        \"registered_user\": {\r\n            \"username\": \"bion123\",\r\n            \"email\": \"bionandardy@gmail.com\",\r\n            \"password\": \"$2b$10$NZNbkrSfbeNxWT9hdy0RReaUbUCvviq2u8q8PwTMF6EBT8LAmoviu\",\r\n            \"role\": \"member\",\r\n            \"id\": \"10\"\r\n        }\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/auth/login",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"ok\",\r\n    \"message\": \"User Berhasil Login\",\r\n    \"data\": {\r\n        \"access_token\": \"token\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "get logged in user Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/auth/me",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get logged in user Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/me",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"status\": \"OK\",\r\n    \"message\": \"User logged in succesfully\",\r\n    \"data\": {\r\n        \"user\": {\r\n            \"id\": \"7\",\r\n            \"username\": \"rizky\",\r\n            \"email\": \"rizky@gmail.com\",\r\n            \"password\": \"$2b$10$LuOb4yh5H.30h7ny5BrpaORdS6Fr87XPadKL.EVFC7gNK6o5zdDHy\",\r\n            \"role\": \"superadmin\"\r\n        }\r\n    }\r\n}"
+				}
+			]
+		}
+	]
+}
