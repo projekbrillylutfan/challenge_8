@@ -20,8 +20,9 @@ class CarServices {
     let listCar: Car[] = [];
 
     listCar = await this._carsRepository.getCars();
+    const listCarArray = Array.isArray(listCar) ? listCar : [listCar];
 
-    const listCarResponse: CarResponse[] = listCar.map((car) => {
+    const listCarResponse: CarResponse[] = listCarArray.map((car) => {
       const carResponse: CarResponse = {
         id: car.id as number,
         car_name: car.car_name,

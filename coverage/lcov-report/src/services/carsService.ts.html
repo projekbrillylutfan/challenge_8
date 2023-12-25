@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.31% </span>
+                <span class="strong">56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/99</span>
+                <span class='fraction'>56/100</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">23.07% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/13</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.31% </span>
+                <span class="strong">56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/99</span>
+                <span class='fraction'>56/100</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -162,7 +162,8 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -186,30 +187,31 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -283,32 +285,33 @@ class CarServices {
     let listCar: Car[] = [];
 &nbsp;
     listCar = await this._carsRepository.getCars();
+    const listCarArray = Array.isArray(listCar) <span class="branch-0 cbranch-no" title="branch not covered" >? listCar </span>: [listCar];
 &nbsp;
-    const listCarResponse: CarResponse[] = listCar.map((car) =&gt; {
-<span class="cstat-no" title="statement not covered" >      const carResponse: CarResponse = {</span>
-<span class="cstat-no" title="statement not covered" >        id: car.id as number,</span>
-<span class="cstat-no" title="statement not covered" >        car_name: car.car_name,</span>
-<span class="cstat-no" title="statement not covered" >        car_categories: car.car_categories,</span>
-<span class="cstat-no" title="statement not covered" >        car_size: car.car_size,</span>
-<span class="cstat-no" title="statement not covered" >        status_rental: car.status_rental,</span>
-<span class="cstat-no" title="statement not covered" >        car_img: car.car_img,</span>
-<span class="cstat-no" title="statement not covered" >        created_by: {</span>
-<span class="cstat-no" title="statement not covered" >          id: car.created_by?.id as number,</span>
-<span class="cstat-no" title="statement not covered" >          username: car.created_by?.username as string,</span>
-<span class="cstat-no" title="statement not covered" >          email: car.created_by?.email as string,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        updated_by: {</span>
-<span class="cstat-no" title="statement not covered" >          id: car.updated_by?.id as number,</span>
-<span class="cstat-no" title="statement not covered" >          username: car.created_by?.username as string,</span>
-<span class="cstat-no" title="statement not covered" >          email: car.updated_by?.email as string,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        deleted_by: {</span>
-<span class="cstat-no" title="statement not covered" >          id: car.deleted_by?.id as number,</span>
-<span class="cstat-no" title="statement not covered" >          username: car.created_by?.username as string,</span>
-<span class="cstat-no" title="statement not covered" >          email: car.deleted_by?.email as string,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >      };</span>
-<span class="cstat-no" title="statement not covered" >      return carResponse;</span>
+    const listCarResponse: CarResponse[] = listCarArray.map((car) =&gt; {
+      const carResponse: CarResponse = {
+        id: car.id as number,
+        car_name: car.car_name,
+        car_categories: car.car_categories,
+        car_size: car.car_size,
+        status_rental: car.status_rental,
+        car_img: car.car_img,
+        created_by: {
+          id: car.created_by<span class="branch-0 cbranch-no" title="branch not covered" >?.id as number,</span>
+          username: car.created_by<span class="branch-0 cbranch-no" title="branch not covered" >?.username as string,</span>
+          email: car.created_by<span class="branch-0 cbranch-no" title="branch not covered" >?.email as string,</span>
+        },
+        updated_by: {
+          id: car.updated_by<span class="branch-0 cbranch-no" title="branch not covered" >?.id as number,</span>
+          username: car.created_by<span class="branch-0 cbranch-no" title="branch not covered" >?.username as string,</span>
+          email: car.updated_by<span class="branch-0 cbranch-no" title="branch not covered" >?.email as string,</span>
+        },
+        deleted_by: {
+          id: car.deleted_by<span class="branch-0 cbranch-no" title="branch not covered" >?.id as number,</span>
+          username: car.created_by<span class="branch-0 cbranch-no" title="branch not covered" >?.username as string,</span>
+          email: car.deleted_by<span class="branch-0 cbranch-no" title="branch not covered" >?.email as string,</span>
+        },
+      };
+      return carResponse;
     });
 &nbsp;
     return listCarResponse;
@@ -367,7 +370,7 @@ export default CarServices;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-24T17:25:05.742Z
+                at 2023-12-25T07:45:20.037Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
